@@ -1,6 +1,6 @@
 import { getAllCountries } from "../../services/countryServices"
 
-export const useGame = async ({ itemsQuantity }) => {
+export const useGame = async ( itemsQuantity ) => {
     let countries = await getAllCountries();
     shuffleArray(countries);
     let items = [];
@@ -23,7 +23,6 @@ export const useGame = async ({ itemsQuantity }) => {
     return {
         items,
         turn: 0,
-        score: Array(itemsQuantity).fill(0)     // -1: incorrect,   0: no answer yet,   1 correct
     }
 }
 
