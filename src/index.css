@@ -11,3 +11,7 @@
 body{
   background: #E5E5E5;
 }
+button{
+
+  -webkit-tap-highlight-color: transparent;
+}
