@@ -17,17 +17,13 @@ export const QuestionComponent = ({game, setgame, score, setscore}) => {
       setitem(game.items[game.turn]);
       setdisableButton(false);
       setprintCorrect(false);
-      if (game.turn == 12) {
-        setFinish(true)
-      }
     }, 1000);
   }
 
   return (
     <div className='w-full'>
-      <div className='h-52-  mb-9'>
-        <img src={item.flag} alt="imagen" className='max-h-52 border m-auto' />
-
+      <div className='h-52 sm:h-52 md:h-72 mb-3 sm:mb-8 flex'>
+        <img src={item.flag} alt="imagen" className='max-h-full border m-auto' />
       </div>
       <div className='flex flex-col items-center'>
         {

@@ -5,6 +5,7 @@ import withReactContent from 'sweetalert2-react-content'
 import { useGame } from '../../hooks/GameHook'
 import { QuestionComponent } from '../../components/QuestionComponent'
 import { ScoreComponent } from '../../components/ScoreComponent';
+import { Navigate } from "react-router-dom";
 
 export const PlayPage = () => {
 
@@ -44,17 +45,25 @@ export const PlayPage = () => {
     }
     return (
         !loading && (
-            <div className='flex flex-col justify-evenly h-full items-center'>
-                <h4 className='text-main-green text-center'>Adivina el país de la bandera</h4>
-                <ScoreComponent score={score} />
-                {
-                    game.turn < 12 ? <QuestionComponent game={game} setgame={setgame} score={score} setscore={setscore} />
-                    :
-                    <p>End</p>
-                }
-                <div className='w-5/6 flex justify-end'>
-                    <button className='bg-red-200 py-2 px-5 rounded-full' onClick={handleExit}>Exit</button>
+            <div className='flex flex-col justify-start gap-3 sm:gap-8 h-full items-center py-4'>
+                <div className='w-full'>
+                    <h4 className='text-main-green text-center text-2xl'>What country is it?</h4>
+                    <ScoreComponent score={score} />
+
                 </div>
+                {
+                    game.turn < itemsQuantity ?
+                        <>
+                            <QuestionComponent game={game} setgame={setgame} score={score} setscore={setscore} />
+                            <div className='w-5/6 flex justify-end'>
+
+                            <button className='bg-red-200 py-1 px-3 w-28 rounded-full self-end mt-2 ' onClick={handleExit}>Exit</button>
+                            </div>
+                        </>
+                        :
+                        <Navigate to="/Result" replace={true} state={{score:score}} />
+                        // <FinalResultComponent score={score} />
+                }
             </div>
         )
     )
