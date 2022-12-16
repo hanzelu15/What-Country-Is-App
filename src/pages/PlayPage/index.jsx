@@ -5,10 +5,11 @@ import withReactContent from 'sweetalert2-react-content'
 import { useGame } from '../../hooks/GameHook'
 import { QuestionComponent } from '../../components/QuestionComponent'
 import { ScoreComponent } from '../../components/ScoreComponent';
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const PlayPage = () => {
 
+    const navigate = useNavigate();
     const MySwal = withReactContent(Swal);
     const itemsQuantity = 12;
     const [game, setgame] = useState();
@@ -26,21 +27,17 @@ export const PlayPage = () => {
     const handleExit = () => {
         MySwal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "You'll go back to the menu and won't be able to come back!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Continue',
+            confirmButtonText: 'Continue game',
             cancelButtonText: 'Yes, back to menu!'
         }).then((result) => {
-            if (!result.isConfirmed) {
-                MySwal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
+            if (!result.isConfirmed) 
+                navigate("/");
+            
         })
     }
     return (

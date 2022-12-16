@@ -6,7 +6,6 @@ import { ScoreComponent } from '../../components/ScoreComponent';
 export const GameResultPage = () => {
 
   const { state } = useLocation();
-
   const corrects = state.score.filter(point => {
     return (point == 1);
   }).length;

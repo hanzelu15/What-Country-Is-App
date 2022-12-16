@@ -9,12 +9,12 @@ export const useGame = async ( itemsQuantity ) => {
         const country = countries.pop();
         let options = [];
         for (let i = 0; i < 3; i++) {
-            options[i] = countries.pop().translations.spa.common;
+            options[i] = countries.pop().name.common;
         }
-        options[3] = country.translations.spa.common;
+        options[3] = country.name.common;
         shuffleArray(options);
         const item = {
-            name: country.translations.spa.common,
+            name: country.name.common,
             flag: country.flags.svg,
             options: options
         }
