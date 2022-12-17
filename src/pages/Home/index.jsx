@@ -10,7 +10,7 @@ export const Home = () => {
             <img className='w-[100px] m-auto' src="src/assets/worldImage.svg" alt="logo" />
             <div className='w-4/5 mt-16 flex flex-col justify-between m-auto'>
                 <MenuButtonComponent url="/PlayGame" text="Play" />
-                <MenuButtonComponent url="/" text="Learn" />
+                <MenuButtonComponent url="/search" text="Learn" />
             </div>
 
         </div>
