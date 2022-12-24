@@ -9,7 +9,10 @@
 }
 
 body{
-  background: #E5E5E5;
+  background: linear-gradient(#439A97, #CBEDD5);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 button{
 

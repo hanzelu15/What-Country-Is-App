@@ -2,7 +2,7 @@ import React from 'react'
 
 export const CountryCardComponent = ({ item }) => {
   return (
-    <div className=' bg-slate-50 min-h-[400px] '>
+    <div className=' bg-slate-50 min-h-[400px] max-w-sm rounded-md overflow-hidden'>
       <div className={`h-[250px] md:h-[180px] w-full`} >
         <img className='h-full w-full m-auto' src={item.flags.png} alt={item.name.common} />
       </div>

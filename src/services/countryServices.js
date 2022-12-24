@@ -1,7 +1,6 @@
 export const getAllCountries = async () => {
-  const response = await fetch("https://restcountries.com/v3.1/all?fields=name,unMember,translations,flags");
+  const response = await fetch("https://restcountries.com/v3.1/all?fields=name,unMember,translations,flags,capital,languages,population");
   const countries = await response.json();
-  console.log(countries);
   const countriesFiltered = countries.filter(
     (country) => country.unMember == true
   );

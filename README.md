@@ -15,12 +15,14 @@ The user can also use a search engine to search for countries and learn about th
 
 - As a user, if I choose play option, I can see a flag and below four names to choose from.
 
-- As a user, if a choose the wrong option in game,  I can see the correct answer before going to the next question
+- As a user, if a choose the wrong option in game,  I can see the correct answer before going to the next question.
 
 - As a user, if I'm playing, I have twelve turns and I can see my score always.
+
+- As a user, when the game ends, I can see my final score.
 
 - As a user, if I'm playing, I can stop my game and return to the main manu.
 
 ## Technologies
 
-React js and a API from https://restcountries.com/
+React js, tailwind  and a API from https://restcountries.com/

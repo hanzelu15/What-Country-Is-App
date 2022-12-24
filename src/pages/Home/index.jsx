@@ -4,7 +4,7 @@ import { MenuButtonComponent } from '../../components/MenuButtonComponent'
 export const Home = () => {
 
     return (
-        <div className=" bg-white w-full h-full py-16 bg-[url('src/assets/HomeBackground.png')] bg-no-repeat bg-top bg-contain">
+        <div className=" w-full h-full py-16 bg-no-repeat bg-top bg-contain">
 
             <img className='w-[250px] m-auto' src="src/assets/logoImage.svg" alt="logo" />
             <img className='w-[100px] m-auto' src="src/assets/worldImage.svg" alt="logo" />

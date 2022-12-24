@@ -35,31 +35,27 @@ export const PlayPage = () => {
             confirmButtonText: 'Continue game',
             cancelButtonText: 'Yes, back to menu!'
         }).then((result) => {
-            if (!result.isConfirmed) 
+            if (!result.isConfirmed)
                 navigate("/");
-            
+
         })
     }
     return (
         !loading && (
-            <div className='flex flex-col justify-start gap-3 sm:gap-8 h-full items-center py-4'>
-                <div className='w-full'>
-                    <h4 className='text-main-green text-center text-2xl'>What country is it?</h4>
-                    <ScoreComponent score={score} />
-
-                </div>
+            <div className='flex flex-col justify-around h-full items-center py-4 bg-white'>
+                <ScoreComponent score={score} />
                 {
                     game.turn < itemsQuantity ?
                         <>
                             <QuestionComponent game={game} setgame={setgame} score={score} setscore={setscore} />
                             <div className='w-5/6 flex justify-end'>
 
-                            <button className='bg-red-200 py-1 px-3 w-28 rounded-full self-end mt-2 ' onClick={handleExit}>Exit</button>
+                                <button className='bg-red-200 py-1 px-3 w-28 rounded-full self-end mt-2 ' onClick={handleExit}>Exit</button>
                             </div>
                         </>
                         :
-                        <Navigate to="/Result" replace={true} state={{score:score}} />
-                        // <FinalResultComponent score={score} />
+                        <Navigate to="/Result" replace={true} state={{ score: score }} />
+                    // <FinalResultComponent score={score} />
                 }
             </div>
         )
